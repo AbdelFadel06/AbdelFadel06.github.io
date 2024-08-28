@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.content-container {
+  display: flex;
+  flex: 1 1 auto;
+  padding-top: 10vh;
+  width: 100%;
+}
+        /* COLUMN STYLES */
+.col-three {
+  display: flex;
+  flex: 1;
+}
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+  flex: 0 1 15em;
+}
+.col-three .col-content {
+  flex: 1;
+}
+.col-three .col-aside {
+  flex: 0 1 20em;
+}
+/* GALLERY STYLES */
+.gallery-thumbs {
+  height: 90vh;
+  overflow: scroll;
+}
+.gallery-thumbs > div {
+  cursor: pointer;
+}
+.gallery-thumbs img {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px transparent;
+  display: inline-block;
+  margin: 0 0 10px;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.gallery-thumbs img:hover {
+  opacity: 1;
+}
+.gallery-thumbs .current img {
+  box-shadow: 0 0 0 5px #ed6e2f;
+  opacity: 1;
+}
+.gallery-photo {
+  position: relative;
+}
+.gallery-photo img {
+  width: 100%;
+}
+.gallery-info {
+  font-size: 0.8rem;
+}
+.gallery-info h3 {
+  margin-bottom: 1em;
+}
+
+
+@media (max-width: 800px) {
+  
+  /* GALLERY STYLES */
+  .gallery {
+    flex-direction: column;
+  }
+  .gallery .col {
+    padding: 1em;
+  }
+  .gallery .gallery-thumbs {
+    flex: 1;
+    height: auto;
+    white-space: nowrap;
+    width: 100vw;
+  }
+  .gallery-thumbs > div {
+    display: inline-block;
+  }
+  .gallery-thumbs img {
+    height: 7vh;
+    margin: 0 10px 0 0;
+    width: auto;
+  }
+  .gallery .gallery-info {
+    flex: 1;
+  }
+}
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+   
+        <div class="gallery col-three">
+  <div class="col col-nav gallery-thumbs" id="gallery-thumbs">
+    <div class="current">
+      <img src="/images/small/slide1.jpg" alt="Image title 1">
+    </div>
+    <div>
+      <img src="/images/small/slide1.jpg" alt="Image title 2">
+    </div>
+ </div>
+ <div class="col col-content">
+   <div class="gallery-photo" id="gallery-photo">
+     <img src="/images/large/slide1.jpg" alt="Image title 1">
+   </div>
+ </div>
+ <div class="col col-aside gallery-info" id="gallery-info">
+   <h3>Image Title 1</h3>
+   <p>Image description 1</p>
+ </div>
+</div>
+
+    </div>
+</body>
+</html>
